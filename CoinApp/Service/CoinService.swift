@@ -43,11 +43,11 @@ public class CoinService: CoinServiceProtocol {
                     print(json)
                     print(json.data.coins.first?.name ?? "")
                     
-                    coinElement = json.data.coins
-                    coinData = json.data
+                    //coinElement = json.data.coins
+                    //coinData = json.data
                 
-                print(coinElement?.first?.name ?? "")
-                print(coinElement?[1].name ?? "")
+                //print(coinElement?.first?.name ?? "")
+                //print(coinElement?[1].name ?? "")
                     
                 
                 case .failure(let error):

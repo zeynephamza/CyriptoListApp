@@ -29,10 +29,10 @@ class ViewController: UIViewController, UITableViewDelegate {
             guard let self else { return }
             
             switch response {
-            case .success(var coins):
+            case .success(let coins):
                 print(coins.first?.name ?? "")
                 self.coins = coins
-            case .failure(let error):
+            case .failure(_):
                 print("Error")
             }
             
