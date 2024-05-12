@@ -7,22 +7,6 @@
 
 import Foundation
 
-/*
-public struct DataResponse: Decodable {
-    
-    public let coinData: DataClass?
-    
-    private enum RootCodingKeys: String, CodingKey{
-        case data
-    }
-    
-    
-    public init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: RootCodingKeys.self)
-        self.coinData = try container.decodeIfPresent(DataClass.self, forKey: .data)
-    }
-    
-}*/
 
 
 public struct CoinResponse: Decodable {

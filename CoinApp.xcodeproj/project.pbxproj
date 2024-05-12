@@ -22,6 +22,9 @@
 		5C12FBB92BEC1FB600854EA9 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12FBB82BEC1FB600854EA9 /* CoinResponse.swift */; };
 		5C12FBBC2BEC21E400854EA9 /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12FBBB2BEC21E400854EA9 /* CoinService.swift */; };
 		5C12FBBF2BECF2E200854EA9 /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12FBBE2BECF2E200854EA9 /* Decoders.swift */; };
+		5CB956A32BEFA50E00F77304 /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB956A12BEFA50E00F77304 /* CoinCell.swift */; };
+		5CB956A42BEFA50E00F77304 /* CoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB956A22BEFA50E00F77304 /* CoinCell.xib */; };
+		5CC917B92BF0FE0400A6323C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC917B82BF0FE0400A6323C /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,8 @@
 		5C12FBB82BEC1FB600854EA9 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		5C12FBBB2BEC21E400854EA9 /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
 		5C12FBBE2BECF2E200854EA9 /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
+		5CB956A12BEFA50E00F77304 /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		5CB956A22BEFA50E00F77304 /* CoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC917B92BF0FE0400A6323C /* SDWebImage in Frameworks */,
 				5C12FBB62BEC10D100854EA9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +117,7 @@
 		5C12FB702BEB950800854EA9 /* CoinApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CB956A02BEFA4B100F77304 /* Cell */,
 				5C12FBBD2BECF27500854EA9 /* Decoder */,
 				5C12FBBA2BEC21CB00854EA9 /* Service */,
 				5C12FBB72BEC1F9C00854EA9 /* Response */,
@@ -176,6 +183,15 @@
 			path = Decoder;
 			sourceTree = "<group>";
 		};
+		5CB956A02BEFA4B100F77304 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5CB956A12BEFA50E00F77304 /* CoinCell.swift */,
+				5CB956A22BEFA50E00F77304 /* CoinCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +210,7 @@
 			name = CoinApp;
 			packageProductDependencies = (
 				5C12FBB52BEC10D100854EA9 /* Alamofire */,
+				5CC917B82BF0FE0400A6323C /* SDWebImage */,
 			);
 			productName = CoinApp;
 			productReference = 5C12FB6E2BEB950800854EA9 /* CoinApp.app */;
@@ -269,6 +286,7 @@
 			mainGroup = 5C12FB652BEB950800854EA9;
 			packageReferences = (
 				5C12FBB42BEC10D100854EA9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5CC917B72BF0FE0400A6323C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5C12FB6F2BEB950800854EA9 /* Products */;
 			projectDirPath = "";
@@ -288,6 +306,7 @@
 			files = (
 				5C12FB7E2BEB950B00854EA9 /* Assets.xcassets in Resources */,
 				5C12FB812BEB950B00854EA9 /* Base in Resources */,
+				5CB956A42BEFA50E00F77304 /* CoinCell.xib in Resources */,
 				5C12FB792BEB950800854EA9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C12FB762BEB950800854EA9 /* ViewController.swift in Sources */,
+				5CB956A32BEFA50E00F77304 /* CoinCell.swift in Sources */,
 				5C12FB722BEB950800854EA9 /* AppDelegate.swift in Sources */,
 				5C12FBBF2BECF2E200854EA9 /* Decoders.swift in Sources */,
 				5C12FB7C2BEB950800854EA9 /* CoinApp.xcdatamodeld in Sources */,
@@ -671,6 +691,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		5CC917B72BF0FE0400A6323C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -678,6 +706,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C12FBB42BEC10D100854EA9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5CC917B82BF0FE0400A6323C /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CC917B72BF0FE0400A6323C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

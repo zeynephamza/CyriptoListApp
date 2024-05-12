@@ -48,18 +48,19 @@ public struct CoinElement: Decodable {
 */
 
 public struct RootResponse: Decodable {
-   let data: DataClass
-   let status: String
+   let data: DataClass?
+   let status: String?
 }
 
 public struct DataClass: Decodable {
-  let coins: [Coins]
+  let coins: [Coins]?
 }
 
 public struct Coins: Decodable {
 
-  let name, price, change: String
-  let sparkline: [String]
+    let name, symbol, price, change, iconUrl: String?
+    let sparkline: [String]?
+    let listedAt: Int?
 
 }
 

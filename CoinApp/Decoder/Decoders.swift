@@ -10,7 +10,7 @@ import Foundation
 
 public enum Decoders {
     
-    static let dataDecoder: JSONDecoder = {
+    static let dateDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
