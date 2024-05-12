@@ -15,7 +15,6 @@ extension ViewController {
         static let cellLeftPadding: CGFloat = 16
         static let cellRightPadding: CGFloat = 16
     }
-    
 }
 
 class ViewController: UIViewController {
@@ -27,17 +26,18 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        // show loading olabilir burda
         service.fetchCoinData { response in
             
             //guard let self else { return }
             switch response {
             case .success(let coins):
+                // hide loading
                 DispatchQueue.main.async {
                     print(coins.first?.name ?? "")
                     self.coins = coins
                     self.homeTableView.reloadData()
-                    print(self.coins[1].name)
+                    print(self.coins[1].name as Any)
                 }
             case .failure(_):
                 print("Error")
@@ -45,7 +45,6 @@ class ViewController: UIViewController {
             
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,12 +71,11 @@ extension ViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell", for: indexPath) as! CoinCell
         cell.configure(coin: coins[indexPath.row])
-        
-        
-        
+           
         return cell
     }
     
+    // I did not use this
     private func calculateHeight() -> CGFloat {
         let cellWidth = homeTableView.frame.size.width - (Constants.cellLeftPadding + Constants.cellRightPadding)
         let posterImageHeight = cellWidth * Constants.cellPosterImageRatio

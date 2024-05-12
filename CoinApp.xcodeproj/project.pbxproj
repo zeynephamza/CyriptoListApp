@@ -25,6 +25,7 @@
 		5CB956A32BEFA50E00F77304 /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB956A12BEFA50E00F77304 /* CoinCell.swift */; };
 		5CB956A42BEFA50E00F77304 /* CoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB956A22BEFA50E00F77304 /* CoinCell.xib */; };
 		5CC917B92BF0FE0400A6323C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC917B82BF0FE0400A6323C /* SDWebImage */; };
+		5CC917BB2BF14B5100A6323C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC917BA2BF14B5100A6323C /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		5C12FBBE2BECF2E200854EA9 /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 		5CB956A12BEFA50E00F77304 /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
 		5CB956A22BEFA50E00F77304 /* CoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinCell.xib; sourceTree = "<group>"; };
+		5CC917BA2BF14B5100A6323C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				5C12FB712BEB950800854EA9 /* AppDelegate.swift */,
 				5C12FB732BEB950800854EA9 /* SceneDelegate.swift */,
 				5C12FB752BEB950800854EA9 /* ViewController.swift */,
+				5CC917BA2BF14B5100A6323C /* ViewModel.swift */,
 				5C12FB772BEB950800854EA9 /* Main.storyboard */,
 				5C12FB7D2BEB950B00854EA9 /* Assets.xcassets */,
 				5C12FB7F2BEB950B00854EA9 /* LaunchScreen.storyboard */,
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC917BB2BF14B5100A6323C /* ViewModel.swift in Sources */,
 				5C12FB762BEB950800854EA9 /* ViewController.swift in Sources */,
 				5CB956A32BEFA50E00F77304 /* CoinCell.swift in Sources */,
 				5C12FB722BEB950800854EA9 /* AppDelegate.swift in Sources */,

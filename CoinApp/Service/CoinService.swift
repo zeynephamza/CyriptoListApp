@@ -24,11 +24,7 @@ public class CoinService: CoinServiceProtocol {
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 
         AF.request(encodedUrl!).responseJSON { response in
-            //print(response.request as Any)
-            //print(response.response as Any)
-            //print(response.data as Any)
-            //print(response.result as Any)
-            
+          
             // response.result -> success -> .data.coins.name
             
             let decoder = JSONDecoder()
@@ -41,10 +37,7 @@ public class CoinService: CoinServiceProtocol {
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     guard let json = try? decoder.decode(RootResponse.self, from: response.data ?? Data()) else { print("Unable to parse JSON"); return }
                     
-                completion(.success((json.data?.coins)!))
-                    //print(json)
-                    //print(json.data.coins.first?.name ?? "")
-                         
+                completion(.success((json.data?.coins)!))      
                 
                 case .failure(let error):
                     print("*** Please try again later***", error.localizedDescription)

@@ -31,17 +31,41 @@ class CoinCell: UITableViewCell {
     
     func configure(coin: Coins){
 
-        var svgUrl = coin.iconUrl
+        let svgUrl = coin.iconUrl
         let pngUrl: String = svgUrl?.replacingOccurrences(of: ".svg", with: ".png", options: .literal, range: nil) ?? "https://cdn.coinranking.com/H1arXIuOZ/doge.svg"
-            
-        //var url = svgUrl?.dropLast(3) ?? "https://cdn.coinranking.com/H1arXIuOZ/doge.png"
-        //var pngUrl: String = url + "png"
-        
+             
         iconImgView.sd_setImage(with: URL(string: pngUrl), placeholderImage: UIImage(named: "https://cdn.coinranking.com/H1arXIuOZ/doge.png"))
         
         nameLabel.text = coin.name
         iconLabel.text = coin.symbol
         
+        
+        let newChange = changeDiff(coin: coin)
+        if (coin.change!.contains("-")) {
+            changeLabel.textColor = .systemRed
+            var formatStr = String(format: "%.3f", newChange)
+            changeLabel.text = "\(String(describing: coin.change!))% ($\(formatStr))"
+        } else {
+            changeLabel.textColor = .systemGreen
+            var formatStr = String(format: "%.3f", newChange)
+            changeLabel.text = "+\(String(describing: coin.change!))% (+$\(formatStr))"
+        }
+        
+        let formatPrice = String(format: "%.3f", Double(coin.price!)!)
+        priceLabel.text = "$\(formatPrice)"
+    
+    }
+    
+    // Calculates the change of the ol and new priceces as percentage
+    func changeDiff(coin: Coins) -> Double {
+        
+        let currentPriceD: Double? = Double(coin.price ?? "")
+        //var oldPriceD: Double? = Double(oldCoin.price ?? "")
+        let changeD: Double? = Double(coin.change ?? "")
+        
+        let newChange = (currentPriceD ?? 0) - ((currentPriceD ?? 0) / (1+(changeD ?? 0)/100))
+        
+        return newChange
     }
     
 }
