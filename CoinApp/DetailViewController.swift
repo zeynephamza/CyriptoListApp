@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var selectedCoin: Coins?
+    var detailViewModel: DetailViewModel?
     
     @IBOutlet var imageLabel: UIImageView!
     @IBOutlet var lowLabel: UILabel!
@@ -17,88 +18,39 @@ class DetailViewController: UIViewController {
     @IBOutlet var changeLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
-    
     @IBOutlet var symbolLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        if let labelToLoad = selectedCoin?.price{
-            priceLabel.text = labelToLoad
-        }
-        reloadInputViews()
-        */
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let priceToLoad = String(format: "%.3f", Double((selectedCoin?.price!)!)!)
-        priceLabel.text = "$\(priceToLoad)"
-        
-        if let nameToLoad = selectedCoin?.name{
-            nameLabel.text = nameToLoad
+        // Passed the selectedcoin to Detail view model.
+        if let selectedCoin = selectedCoin {
+            detailViewModel = DetailViewModel(selectedCoin: selectedCoin)
+            
+            //Loads the UI with getting the datas from DetailViewModel.
+            loadDetailUI()
         }
-        if let symbolToLoad = selectedCoin?.symbol{
-            symbolLabel.text = symbolToLoad
-        }
-        
-        
-        let newChange = changeDiff(coin: selectedCoin!)
-        if (((selectedCoin?.change!.contains("-"))) != nil) {
-            changeLabel.textColor = .systemRed
-            let formatStr = String(format: "%.3f", newChange)
-            changeLabel.text = "\(String(describing: selectedCoin!.change!))% ($\(formatStr))"
+    }
+    
+    //Update the view by getting data from ViewModel using get methods.
+    func loadDetailUI() {
+        nameLabel.text   = detailViewModel?.getNameText()
+        priceLabel.text  = detailViewModel?.getPriceText()
+        symbolLabel.text = detailViewModel?.getSymbolText()
+        highLabel.text   = detailViewModel?.getHighText()
+        lowLabel.text    = detailViewModel?.getLowText()
+        imageLabel.sd_setImage(with: detailViewModel?.getImageURL(), placeholderImage: UIImage(named: "https://cdn.coinranking.com/H1arXIuOZ/doge.png"))
+        changeLabel.text = detailViewModel?.getChangeText()
+        if (changeLabel.text?.first == "-") {
+            (changeLabel.textColor = .systemRed)
         } else {
-            changeLabel.textColor = .systemGreen
-            let formatStr = String(format: "%.3f", newChange)
-            changeLabel.text = "+\(String(describing: selectedCoin!.change!))% (+$\(formatStr))"
+            (changeLabel.textColor = .systemGreen)
         }
-        
-        
-        
-        
-        let highToLoad = String(format: "%.2f", Double((selectedCoin?.sparkline?.max())!) ?? "")
-        highLabel.text = "High: \(highToLoad)"
-        
-        let lowToLoad = String(format: "%.2f", Double((selectedCoin?.sparkline?.min())!) ?? "")
-        lowLabel.text = "Low: \(highToLoad)"
-        
-        
-        
-        
-        
-        let svgUrl = selectedCoin?.iconUrl
-        let pngUrl: String = svgUrl?.replacingOccurrences(of: ".svg", with: ".png", options: .literal, range: nil) ?? "https://cdn.coinranking.com/H1arXIuOZ/doge.svg"
-             
-        imageLabel.sd_setImage(with: URL(string: pngUrl), placeholderImage: UIImage(named: "https://cdn.coinranking.com/H1arXIuOZ/doge.png"))
-        
-        
     }
-    
-    
-    func changeDiff(coin: Coins) -> Double {
-        let currentPriceD: Double? = Double(coin.price ?? "")
-        let changeD: Double? = Double(coin.change ?? "")
-        let newChange = (currentPriceD ?? 0) - ((currentPriceD ?? 0) / (1+(changeD ?? 0)/100))
-        
-        return newChange
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-
     
 }
 
-extension DetailViewController {
-    // Calculates the change of the old and new priceces as percentage
-    
-}

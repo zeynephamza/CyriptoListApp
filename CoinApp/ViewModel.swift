@@ -17,7 +17,6 @@ extension ViewModel {
     }
 }
 
-
 protocol ViewModelProtocol {
     var delegate: ViewModelDelegate? { get set }
     var numberOfItems: Int { get }
@@ -26,14 +25,12 @@ protocol ViewModelProtocol {
     func getACoin(index: Int) -> Coins?
     func calculateCellHeight(tableViewWidth: Double) -> Double
     
-    
 }
 
 protocol ViewModelDelegate: AnyObject {
     //func showLoading()
     //func hideLoading()
     func reloadData()
-    
 }
 
 final class ViewModel {
@@ -87,7 +84,6 @@ extension ViewModel: ViewModelProtocol {
     }
     
     func calculateCellHeight(tableViewWidth: Double) -> Double {
-        
             let cellWidth = tableViewWidth - (Constants.cellLeftPadding + Constants.cellRightPadding)
             let posterImageHeight = cellWidth * Constants.cellPosterImageRatio
             return Constants.cellTitleHeight + posterImageHeight
