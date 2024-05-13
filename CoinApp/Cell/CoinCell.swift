@@ -39,30 +39,24 @@ class CoinCell: UITableViewCell {
         nameLabel.text = coin.name
         iconLabel.text = coin.symbol
         
-        
         let newChange = changeDiff(coin: coin)
         if (coin.change!.contains("-")) {
             changeLabel.textColor = .systemRed
-            var formatStr = String(format: "%.3f", newChange)
+            let formatStr = String(format: "%.3f", newChange)
             changeLabel.text = "\(String(describing: coin.change!))% ($\(formatStr))"
         } else {
             changeLabel.textColor = .systemGreen
-            var formatStr = String(format: "%.3f", newChange)
+            let formatStr = String(format: "%.3f", newChange)
             changeLabel.text = "+\(String(describing: coin.change!))% (+$\(formatStr))"
         }
-        
         let formatPrice = String(format: "%.3f", Double(coin.price!)!)
         priceLabel.text = "$\(formatPrice)"
-    
     }
     
-    // Calculates the change of the ol and new priceces as percentage
+    // Calculates the change of the old and new priceces as percentage
     func changeDiff(coin: Coins) -> Double {
-        
         let currentPriceD: Double? = Double(coin.price ?? "")
-        //var oldPriceD: Double? = Double(oldCoin.price ?? "")
         let changeD: Double? = Double(coin.change ?? "")
-        
         let newChange = (currentPriceD ?? 0) - ((currentPriceD ?? 0) / (1+(changeD ?? 0)/100))
         
         return newChange
