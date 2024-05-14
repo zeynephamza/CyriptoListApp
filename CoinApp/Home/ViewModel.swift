@@ -45,6 +45,7 @@ protocol ViewModelDelegate: AnyObject {
 
 final class ViewModel {
     
+    //Sort will be done according to these
     let dataToFilter = ["24h Vol", "Price", "Change", "Market Cap", "Listed At"]
     private var coins = [Coins]()
     var service: CoinServiceProtocol
@@ -63,13 +64,12 @@ final class ViewModel {
             case .success(let coins):
                 // hide loading
                 DispatchQueue.main.async {
-                    print(coins.first?.name ?? "")
-                    self.coins = coins
-                    //self.homeTableView.reloadData()
                     
+                    // Loaading the model
+                    self.coins = coins
+            
                     // Tells to vc that data can be reload.
                     self.delegate?.reloadData()
-                    print(self.coins[1].name as Any)
                 }
             case .failure(_):
                 print("Error")

@@ -159,20 +159,27 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="bBC-Qa-FdM"/>
-                                </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9i-45-y7W" customClass="LineChartView" customModule="CoinApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="334" width="361" height="500"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h5D-YP-mrf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KdF-hf-d4F" firstAttribute="top" secondItem="h5D-YP-mrf" secondAttribute="top" id="DFw-6l-MgQ"/>
                             <constraint firstItem="KdF-hf-d4F" firstAttribute="leading" secondItem="h5D-YP-mrf" secondAttribute="leading" constant="16" id="DsY-5a-gxX"/>
                             <constraint firstItem="h5D-YP-mrf" firstAttribute="trailing" secondItem="KdF-hf-d4F" secondAttribute="trailing" constant="16" id="FcC-fm-Iqx"/>
                             <constraint firstItem="KdF-hf-d4F" firstAttribute="top" secondItem="h5D-YP-mrf" secondAttribute="top" id="HAg-1T-Knu"/>
+                            <constraint firstItem="g9i-45-y7W" firstAttribute="bottom" secondItem="h5D-YP-mrf" secondAttribute="bottom" constant="16" id="KAs-Tp-TQM"/>
                             <constraint firstItem="KdF-hf-d4F" firstAttribute="leading" secondItem="ODl-wl-ERe" secondAttribute="leadingMargin" id="Lre-On-3dQ"/>
+                            <constraint firstItem="g9i-45-y7W" firstAttribute="top" secondItem="KdF-hf-d4F" secondAttribute="bottom" constant="50" id="RW9-CQ-MyC"/>
+                            <constraint firstItem="h5D-YP-mrf" firstAttribute="trailing" secondItem="KdF-hf-d4F" secondAttribute="trailing" constant="16" id="bOX-Wk-g9I"/>
+                            <constraint firstItem="h5D-YP-mrf" firstAttribute="trailing" secondItem="g9i-45-y7W" secondAttribute="trailing" constant="16" id="blY-1D-gqg"/>
                             <constraint firstItem="KdF-hf-d4F" firstAttribute="trailing" secondItem="ODl-wl-ERe" secondAttribute="trailingMargin" id="g7f-u2-9Kx"/>
-                            <constraint firstItem="h5D-YP-mrf" firstAttribute="bottom" secondItem="KdF-hf-d4F" secondAttribute="bottom" constant="615" id="hYl-0y-PGp"/>
+                            <constraint firstItem="g9i-45-y7W" firstAttribute="leading" secondItem="h5D-YP-mrf" secondAttribute="leading" constant="16" id="ocM-HN-Sfs"/>
+                            <constraint firstItem="KdF-hf-d4F" firstAttribute="leading" secondItem="h5D-YP-mrf" secondAttribute="leading" constant="16" id="vzk-gW-R7K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name" prompt="Symbol" largeTitleDisplayMode="always" id="fzd-zo-L3i">
@@ -182,6 +189,7 @@
                         <outlet property="changeLabel" destination="6tA-TU-JrM" id="Ja6-T3-4f9"/>
                         <outlet property="highLabel" destination="AUs-aP-cbr" id="jBV-yB-K5v"/>
                         <outlet property="imageLabel" destination="EUe-UD-BaU" id="6hy-Gp-npM"/>
+                        <outlet property="lineChartView" destination="g9i-45-y7W" id="Z8O-Xj-qHg"/>
                         <outlet property="lowLabel" destination="rTx-TO-o4a" id="4MN-7j-MCK"/>
                         <outlet property="nameLabel" destination="5Y1-oV-iRZ" id="e2s-aN-eYZ"/>
                         <outlet property="priceLabel" destination="iuK-HQ-Pzi" id="IjK-Dk-h8X"/>
@@ -190,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTj-tm-1aE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.7557251908397" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1701.5267175572519" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w40-AY-X2E">

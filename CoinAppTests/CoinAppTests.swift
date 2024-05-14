@@ -10,27 +10,44 @@ import XCTest
 
 final class CoinAppTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: ViewModel!
+    var view: MockMainViewModel!
+    var mainViewModel: MainViewModelTest!
+    var detailViewModel: DetailViewModelTest!
+    
+    
+    override func setUp(){
+        view = .init()
+        mainViewModel = .init()
+        detailViewModel = .init()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        view = nil
+        mainViewModel = nil
+        detailViewModel = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_viewWillAppear_InvokesRequiredViewMethods(){
+        
+        mainViewModel.load()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_fetchCoin(){
+        XCTAssert(<#T##expression: Bool##Bool#>)
     }
-
+    
 }
+
+/*
+extension CoinResult {
+    
+    static var response: CoinResult{
+        let bundle = Bundle(for: CoinAppTests.self)
+        let path = bundle.path(forResource: coins, ofType: json)!
+        let file = try! String(contentsOf: path)
+        let data = file.data(using: .utf8)
+        let coinResponse = try! JSONDecoder().decode(CoinResult.self, from: data)
+        return coinResponse
+    }
+    
+}*/
