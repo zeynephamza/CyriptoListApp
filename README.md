@@ -37,7 +37,7 @@ This is a simple IOS app that displays cryptocurrencies and their details using 
 
 https://github.com/zeynephamza/CyriptoListApp/assets/15521642/b4c23bca-f5b2-4621-85bf-ef68b2232572
 
-Gör![Simulator Screenshot - iPhone 15 Pro - 2024-05-14 at 23 48 15](https://github.com/zeynephamza/CyriptoListApp/assets/15521642/51b35a98-bcfb-41bf-9c41-d01cc9a5378b)
+Gör![Simulator Screenshot - iPhone 15 Pro - 2024-05-14 at 23 48 15](https://github.com/zeynephamza/CyriptoListApp/assets/15521642/51b35a98-bcfb-41bf-9c41-d01cc9a5378b | width=100)
 üntüsü](https://via.placeholder.com/468x300?text=App+Screenshot+Here)![Simulator Screenshot - iPhone 15 Pro - 2024-05-14 at 23 48 27](https://github.com/zeynephamza/CyriptoListApp/assets/15521642/49e42a7f-d504-4721-97ce-1c65d081697f)
 ![Simulator Screenshot - iPhone 15 Pro - 2024-05-14 at 23 48 43](https://github.com/zeynephamza/CyriptoListApp/assets/15521642/b6ebfaed-0b1f-4d79-b5e3-5ff3468e94d3)
 
