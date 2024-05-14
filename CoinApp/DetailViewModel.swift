@@ -19,9 +19,7 @@ final class DetailViewModel {
     
     init(selectedCoin: Coins) {
         self.selectedCoin = selectedCoin
-    }
-    
-    
+    } 
     func getNameText() -> String {
         return selectedCoin.name ?? ""
     }

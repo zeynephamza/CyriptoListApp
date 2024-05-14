@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KYO-x0-kDk">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <rect key="frame" x="0.0" y="158" width="393" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="CoinCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CoinCell" rowHeight="63" id="U2w-Wd-ImY" customClass="CoinCell" customModule="CoinApp" customModuleProvider="target">
@@ -30,14 +30,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="art-Cm-XY7">
+                                <rect key="frame" x="16" y="103" width="151" height="47"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="KYO-x0-kDk" secondAttribute="bottom" constant="-34" id="MQZ-Iq-w3n"/>
-                            <constraint firstItem="KYO-x0-kDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pf9-dF-b03"/>
-                            <constraint firstItem="KYO-x0-kDk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UCr-Kx-ur5"/>
-                            <constraint firstItem="KYO-x0-kDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6N-1B-MBE"/>
+                            <constraint firstItem="KYO-x0-kDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Hr-0K-7iU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="art-Cm-XY7" secondAttribute="trailing" constant="226" id="8m0-HD-7wk"/>
+                            <constraint firstItem="art-Cm-XY7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qv6-et-Wn0"/>
+                            <constraint firstItem="KYO-x0-kDk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="W8e-nf-vWW"/>
+                            <constraint firstItem="KYO-x0-kDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="baJ-wo-1T3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KYO-x0-kDk" secondAttribute="bottom" constant="-34" id="eSj-3h-COD"/>
+                            <constraint firstItem="KYO-x0-kDk" firstAttribute="top" secondItem="art-Cm-XY7" secondAttribute="bottom" constant="8" id="fZt-WT-XLo"/>
+                            <constraint firstItem="art-Cm-XY7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gjt-XB-QC4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JIy-Bi-BZb"/>
@@ -149,7 +160,6 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="155" id="F2n-QJ-7S2"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="bBC-Qa-FdM"/>
                                 </constraints>
                             </stackView>

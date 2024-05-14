@@ -58,9 +58,14 @@ public struct DataClass: Decodable {
 
 public struct Coins: Decodable {
 
-    let name, symbol, price, change, iconUrl: String?
+    let name, symbol, price, change, iconUrl, _24hVolume, marketCap: String?
     let sparkline: [String]?
     let listedAt: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case name, symbol, price, change, iconUrl, listedAt, sparkline,marketCap
+        case _24hVolume = "24hVolume"
+    }
 
 }
 

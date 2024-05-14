@@ -23,12 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let rootVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
             return
         }
-        
         let vievModel = ViewModel(service: CoinService())
-        rootVC.vievModel = vievModel
+        rootVC.viewModel = vievModel
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()
-        
+    
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

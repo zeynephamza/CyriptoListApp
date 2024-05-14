@@ -32,7 +32,7 @@ public class CoinService: CoinServiceProtocol {
             
             //successStatus=response.result
             switch response.result {
-                case .success(let data):
+            case .success(_):
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     guard let json = try? decoder.decode(RootResponse.self, from: response.data ?? Data()) else { print("Unable to parse JSON"); return }
